@@ -128,3 +128,111 @@
   128  docker exec -it test-inst-3 cat hello.txt 
   129  ls
   130  history > 01-Docker/01-Docker_Containers/Day1_History.txt 
+  131  git add . ; git commit -m "Docker" ; git push 
+  132  ls
+  133  cd 01-Docker/
+  134  l
+  135  mkdir 02-Dockerfile/Apache -p 
+  136  ls
+  137  cd 02-Dockerfile/
+  138  ls
+  139  cd Apache/
+  140  ls
+  141  vim Dockerfile
+  142  ls
+  143  docker build -t web . 
+  144  docker images 
+  145  docker inspect web
+  146  docker history web
+  147  docker history ubuntu
+  148  docker history ubuntu:16.04
+  149  docker ps 
+  150  docker images 
+  151  docker run -d --name test-apache-1 web
+  152  docker ps 
+  153  docker inspect test-apache-1
+  154  curl 172/17.0.3
+  155  curl 172/17.0.2
+  156  curl 172/17.0.4
+  157  curl 172.17.0.4
+  158  curl 172.17.0.3
+  159  curl 172.17.0.2
+  160  curl 172.17.0.4
+  161  docker images 
+  162  vim Dockerfile 
+  163  vim index.html
+  164  ls
+  165  docker build -t web:v2 . 
+  166  docker images
+  167  docker ps -a
+  168  docker images 
+  169  docker ps 
+  170  docker run -d --name test-apache-2 web:v2
+  171  docker ps 
+  172  curl 172.17.0.4
+  173  curl 172.17.0.5
+  174  docker images 
+  175  docker tag web:latest web:v1
+  176  docker images 
+  177  ls
+  178  docker ps 
+  179  docker rmi web:latest
+  180  docker images 
+  181  curl 172.17.0.5:8081
+  182  ls
+  183  vim index.html 
+  184  ls
+  185  vim Dockerfile 
+  186  docker build -t web:v3 . 
+  187  docker images 
+  188  docker run -d --name test-apache-3 web:v3
+  189  docker ps 
+  190  curl 172.17.0.6
+  191  curl 172.17.0.6:80
+  192  curl 172.17.0.6:3306
+  193  vim Dockerfile 
+  194  ls
+  195  cp -rf Dockerfile amit-file
+  196  ls
+  197  vim Dockerfile 
+  198  ls
+  199  cat amit-file 
+  200  ls
+  201  docker build -t web:v4 -f amit-file . 
+  202  docker images 
+  203  docker run -d --name test-apache-4 web:v4
+  204  docker ps 
+  205  ls
+  206  docker ps 
+  207  netstat -tulnp
+  208  docker run -d --name test-apache-5 -p 80:80 web:v4
+  209  docker ps 
+  210  netstat -tulnp
+  211  systemctl status docker
+  212  ls
+  213  curl localhost
+  214  docker ps 
+  215  docker run -d --name test-apache-6 -p 80:80 web:v4
+  216  docker run -d --name test-apache-7 -P  web:v4
+  217  docker ps 
+  218  systemctl status docker
+  219  docker ps 
+  220  docker run -d --name test-apache-8 -P  web:v3
+  221  docker ps 
+  222  netstat -tulnp
+  223  ls
+  224  docker images 
+  225  docker push web:v4 
+  226  docker login 
+  227  docker push web:v4 
+  228  docker tag 463f30ac64f6 amitvashist7/web:v4
+  229  docker images 
+  230  docker push amitvashist7/web:v4 
+  231  docker tag 9dafb7326284 amitvashist7/web:v3
+  232  docker push amitvashist7/web:v3
+  233  ls
+  234  cd ..
+  235  ls
+  236  cd ..
+  237  ls
+  238  history > 01-Docker_Containers/Day1_History.txt 
