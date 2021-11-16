@@ -1,0 +1,19 @@
+    1  docker version 
+    2  docker run ubuntu echo "Hello World"
+    3  docker images 
+    4  docker container ls 
+    5  docker container ls -a
+    6  docker run ubuntu echo "Hello World"
+    7  docker container ls 
+    8  docker container ls -a
+    9  docker run ubuntu ps -ef 
+   10  docker run ubuntu top 
+   11  docker run ubuntu ps 
+   12  docker run -it  ubuntu 
+   13  docker images 
+   14  ls
+   15  cd docker-kubernetes-ericsson-16-Nov-2021/
+   16  ls
+   17  cd 01-Docker/
+   18  ls
+   19  history > 01-Docker_Containers/Day1_History.txt
