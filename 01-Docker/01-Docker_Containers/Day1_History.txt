@@ -66,3 +66,65 @@
    66  ls
    67  history 
    68  history > 01-Docker/01-Docker_Containers/Day1_History.txt 
+   69  ls
+   70  git add . ; git commit -m "Docker" ; git push 
+   71  docker ps 
+   72  docker ps -a
+   73  docker images 
+   74  docker run ubuntu:16.04 echo "Hello World"
+   75  docker ps 
+   76  docker ps -a
+   77  docker run ubuntu:16.04 echo "Hello World"
+   78  docker ps -a
+   79  docker run --name test-inst-1 ubuntu:16.04 echo "Hello World"
+   80  docker ps -a
+   81  docker run --name test-inst-1 ubuntu:16.04 echo "Hello World"
+   82  docker run --name test-inst-2 ubuntu:16.04 echo "Hello World"
+   83  docker ps -a
+   84  l
+   85  docker run -it --name test-inst-3 ubuntu:16.04
+   86  docker ps 
+   87  docker ps -a
+   88  docker run -itd --name test-inst-4 ubuntu:16.04
+   89  docker run -itd --name test-inst-5 ubuntu:16.04
+   90  docker ps 
+   91  docker attach test-inst-4
+   92  docker ps 
+   93  docker ps -a 
+   94  docker start test-inst-3
+   95  docker status  test-inst-3
+   96  docker ps 
+   97  docker ps -a
+   98  docker attach test-inst-3
+   99  docker ps 
+  100  docker attach test-inst-3
+  101  docker ps 
+  102  docker start test-inst-3
+  103  docker ps 
+  104  docker attach test-inst-3
+  105  docker ps 
+  106  docker stop test-inst-5
+  107  docker kill test-inst-3
+  108  docker ps 
+  109  docker ps -a 
+  110  docker kill $(docker ps -aq) 
+  111  ls
+  112  docker ps 
+  113  docker ps -l
+  114  docker start test-inst-3
+  115  docker start test-inst-5
+  116  docker ps 
+  117  docker inspect test-inst-3
+  118  docker ps 
+  119  docker inspect $(docker ps -lq) 
+  120  ip addr 
+  121  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSetting.IPAddress}}' $(docker ps -lq) 
+  122  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -lq) 
+  123  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' test-inst-3
+  124  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' test-inst-1
+  125  ls
+  126  docker ps 
+  127  docker exec -it test-inst-3 ls -ltr 
+  128  docker exec -it test-inst-3 cat hello.txt 
+  129  ls
+  130  history > 01-Docker/01-Docker_Containers/Day1_History.txt 
