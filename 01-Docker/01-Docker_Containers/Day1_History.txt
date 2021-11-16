@@ -17,3 +17,52 @@
    17  cd 01-Docker/
    18  ls
    19  history > 01-Docker_Containers/Day1_History.txt
+   20  ls
+   21  docker images 
+   22  docker inspect image ubuntu
+   23  docker inspect ubuntu
+   24  ls -ltr /var/lib/docker/
+   25  cd ..
+   26  ls
+   27  git add . ; git commit -m "Docker" ; git push 
+   28  ls
+   29  docker version 
+   30  ls
+   31  docker ps -a 
+   32  docker images 
+   33  docker pull ubuntu:16.04
+   34  docker images 
+   35  docker run ubuntu cat /etc/os-release
+   36  docker run ubuntu:16.04 cat /etc/os-release
+   37  docker pull nginx 
+   38  ls
+   39  docker images 
+   40  docker pull amitvashist7/nginx-web:v1
+   41  docker pull amitvashist7/nginx-web:v2
+   42  docker images 
+   43  docker pull amitvashist7/apache-ex4
+   44  docker login 
+   45  docker pull amitvashist7/apache-ex4
+   46  docker ps 
+   47  docker images 
+   48  docker logout 
+   49  docker images 
+   50  docker rmi amitvashist7/apache-ex4
+   51  docker images 
+   52  docker pull amitvashist7/apache-ex4
+   53  docker images 
+   54  docker images -q
+   55  docker rmi $(docker images -q)
+   56  docker ps 
+   57  docker images 
+   58  docker ps -a 
+   59  docker ps -a
+   60  docker ps -aq
+   61  docker rm $(docker ps -aq) 
+   62  docker ps -a 
+   63  docker rmi $(docker images -q)
+   64  docker images 
+   65  docker ps 
+   66  ls
+   67  history 
+   68  history > 01-Docker/01-Docker_Containers/Day1_History.txt 
