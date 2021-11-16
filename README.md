@@ -1,0 +1,1 @@
+# docker-kubernetes-ericsson-16-Nov-2021
