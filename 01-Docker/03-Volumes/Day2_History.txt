@@ -1,0 +1,354 @@
+    1  ls -ltr
+    2  cd docker-kubernetes-ericsson-16-Nov-2021/
+    3  ls -ltr
+    4  cd 01-Docker/
+    5  ls -ltr
+    6  cd 01-Docker_Containers/
+    7  ls -ltr
+    8  mkdir repo
+    9  cd repo/
+   10  git clone https://github.com/amitvashisttech/docker-kubernetes-ericsson-16-Nov-2021.git
+   11  ls -ltr
+   12  cd docker-kubernetes-ericsson-16-Nov-2021/
+   13  ls -ltr
+   14  cd 01-Docker/
+   15  ll
+   16  cd 01-Docker_Containers/
+   17  ls -ltr
+   18  cd ../00-Setup/
+   19  ls -ltr
+   20  ./install-docker.sh 
+   21  ls -ltr
+   22  docker version
+   23  cd ..
+   24  cd -
+   25  ls -ltr
+   26  cd 01-Docker_Containers/
+   27  ls -ltr
+   28  cat Day1_History.txt 
+   29  docker run ubuntu echo "Hello World"
+   30  docker container ls
+   31  docker container ls -a
+   32  cd 
+   33  cd /home/ubuntu/
+   34  ls -ltr
+   35  rm -rf repo/
+   36  exit
+   37  ls -ltr
+   38  docker version 
+   39  docker run ubuntu echo "Hello World"
+   40  docker images 
+   41  docker container ls 
+   42  docker container ls -a
+   43  docker run ubuntu echo "Hello World"
+   44  docker container ls 
+   45  docker container ls -a
+   46  docker run ubuntu ps -ef 
+   47  docker run ubuntu top 
+   48  docker run ubuntu ps 
+   49  docker run -it  ubuntu 
+   50  docker images 
+   51  ls
+   52  cd docker-kubernetes-ericsson-16-Nov-2021/
+   53  ls
+   54  cd 01-Docker/
+   55  ls
+   56  history > 01-Docker_Containers/Day1_History.txt
+   57  ls
+   58  docker images 
+   59  docker inspect image ubuntu
+   60  docker inspect ubuntu
+   61  ls -ltr /var/lib/docker/
+   62  cd ..
+   63  ls
+   64  git add . ; git commit -m "Docker" ; git push 
+   65  ls
+   66  docker version 
+   67  ls
+   68  docker ps -a 
+   69  docker images 
+   70  docker pull ubuntu:16.04
+   71  docker images 
+   72  docker run ubuntu cat /etc/os-release
+   73  docker run ubuntu:16.04 cat /etc/os-release
+   74  docker pull nginx 
+   75  ls
+   76  docker images 
+   77  docker pull amitvashist7/nginx-web:v1
+   78  docker pull amitvashist7/nginx-web:v2
+   79  docker images 
+   80  docker pull amitvashist7/apache-ex4
+   81  docker login 
+   82  docker pull amitvashist7/apache-ex4
+   83  docker ps 
+   84  docker images 
+   85  docker logout 
+   86  docker images 
+   87  docker rmi amitvashist7/apache-ex4
+   88  docker images 
+   89  docker pull amitvashist7/apache-ex4
+   90  docker images 
+   91  docker images -q
+   92  docker rmi $(docker images -q)
+   93  docker ps 
+   94  docker images 
+   95  docker ps -a 
+   96  docker ps -a
+   97  docker ps -aq
+   98  docker rm $(docker ps -aq) 
+   99  docker ps -a 
+  100  docker rmi $(docker images -q)
+  101  docker images 
+  102  docker ps 
+  103  ls
+  104  history 
+  105  history > 01-Docker/01-Docker_Containers/Day1_History.txt 
+  106  ls
+  107  git add . ; git commit -m "Docker" ; git push 
+  108  docker ps 
+  109  docker ps -a
+  110  docker images 
+  111  docker run ubuntu:16.04 echo "Hello World"
+  112  docker ps 
+  113  docker ps -a
+  114  docker run ubuntu:16.04 echo "Hello World"
+  115  docker ps -a
+  116  docker run --name test-inst-1 ubuntu:16.04 echo "Hello World"
+  117  docker ps -a
+  118  docker run --name test-inst-1 ubuntu:16.04 echo "Hello World"
+  119  docker run --name test-inst-2 ubuntu:16.04 echo "Hello World"
+  120  docker ps -a
+  121  l
+  122  docker run -it --name test-inst-3 ubuntu:16.04
+  123  docker ps 
+  124  docker ps -a
+  125  docker run -itd --name test-inst-4 ubuntu:16.04
+  126  docker run -itd --name test-inst-5 ubuntu:16.04
+  127  docker ps 
+  128  docker attach test-inst-4
+  129  docker ps 
+  130  docker ps -a 
+  131  docker start test-inst-3
+  132  docker status  test-inst-3
+  133  docker ps 
+  134  docker ps -a
+  135  docker attach test-inst-3
+  136  docker ps 
+  137  docker attach test-inst-3
+  138  docker ps 
+  139  docker start test-inst-3
+  140  docker ps 
+  141  docker attach test-inst-3
+  142  docker ps 
+  143  docker stop test-inst-5
+  144  docker kill test-inst-3
+  145  docker ps 
+  146  docker ps -a 
+  147  docker kill $(docker ps -aq) 
+  148  ls
+  149  docker ps 
+  150  docker ps -l
+  151  docker start test-inst-3
+  152  docker start test-inst-5
+  153  docker ps 
+  154  docker inspect test-inst-3
+  155  docker ps 
+  156  docker inspect $(docker ps -lq) 
+  157  ip addr 
+  158  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSetting.IPAddress}}' $(docker ps -lq) 
+  159  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -lq) 
+  160  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' test-inst-3
+  161  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' test-inst-1
+  162  ls
+  163  docker ps 
+  164  docker exec -it test-inst-3 ls -ltr 
+  165  docker exec -it test-inst-3 cat hello.txt 
+  166  ls
+  167  history > 01-Docker/01-Docker_Containers/Day1_History.txt 
+  168  git add . ; git commit -m "Docker" ; git push 
+  169  ls
+  170  cd 01-Docker/
+  171  l
+  172  mkdir 02-Dockerfile/Apache -p 
+  173  ls
+  174  cd 02-Dockerfile/
+  175  ls
+  176  cd Apache/
+  177  ls
+  178  vim Dockerfile
+  179  ls
+  180  docker build -t web . 
+  181  docker images 
+  182  docker inspect web
+  183  docker history web
+  184  docker history ubuntu
+  185  docker history ubuntu:16.04
+  186  docker ps 
+  187  docker images 
+  188  docker run -d --name test-apache-1 web
+  189  docker ps 
+  190  docker inspect test-apache-1
+  191  curl 172/17.0.3
+  192  curl 172/17.0.2
+  193  curl 172/17.0.4
+  194  curl 172.17.0.4
+  195  curl 172.17.0.3
+  196  curl 172.17.0.2
+  197  curl 172.17.0.4
+  198  docker images 
+  199  vim Dockerfile 
+  200  vim index.html
+  201  ls
+  202  docker build -t web:v2 . 
+  203  docker images
+  204  docker ps -a
+  205  docker images 
+  206  docker ps 
+  207  docker run -d --name test-apache-2 web:v2
+  208  docker ps 
+  209  curl 172.17.0.4
+  210  curl 172.17.0.5
+  211  docker images 
+  212  docker tag web:latest web:v1
+  213  docker images 
+  214  ls
+  215  docker ps 
+  216  docker rmi web:latest
+  217  docker images 
+  218  curl 172.17.0.5:8081
+  219  ls
+  220  vim index.html 
+  221  ls
+  222  vim Dockerfile 
+  223  docker build -t web:v3 . 
+  224  docker images 
+  225  docker run -d --name test-apache-3 web:v3
+  226  docker ps 
+  227  curl 172.17.0.6
+  228  curl 172.17.0.6:80
+  229  curl 172.17.0.6:3306
+  230  vim Dockerfile 
+  231  ls
+  232  cp -rf Dockerfile amit-file
+  233  ls
+  234  vim Dockerfile 
+  235  ls
+  236  cat amit-file 
+  237  ls
+  238  docker build -t web:v4 -f amit-file . 
+  239  docker images 
+  240  docker run -d --name test-apache-4 web:v4
+  241  docker ps 
+  242  ls
+  243  docker ps 
+  244  netstat -tulnp
+  245  docker run -d --name test-apache-5 -p 80:80 web:v4
+  246  docker ps 
+  247  netstat -tulnp
+  248  systemctl status docker
+  249  ls
+  250  curl localhost
+  251  docker ps 
+  252  docker run -d --name test-apache-6 -p 80:80 web:v4
+  253  docker run -d --name test-apache-7 -P  web:v4
+  254  docker ps 
+  255  systemctl status docker
+  256  docker ps 
+  257  docker run -d --name test-apache-8 -P  web:v3
+  258  docker ps 
+  259  netstat -tulnp
+  260  ls
+  261  docker images 
+  262  docker push web:v4 
+  263  docker login 
+  264  docker push web:v4 
+  265  docker tag 463f30ac64f6 amitvashist7/web:v4
+  266  docker images 
+  267  docker push amitvashist7/web:v4 
+  268  docker tag 9dafb7326284 amitvashist7/web:v3
+  269  docker push amitvashist7/web:v3
+  270  ls
+  271  cd ..
+  272  ls
+  273  cd ..
+  274  ls
+  275  history > 01-Docker_Containers/Day1_History.txt 
+  276  ls
+  277  cd ..
+  278  ls
+  279  git add . ; git commit -m "Docker" ; git push 
+  280  ls
+  281  docker pull centos:8 
+  282  docker images 
+  283  ls
+  284  cd docker-kubernetes-ericsson-16-Nov-2021/
+  285  ls
+  286  cd 01-Docker/
+  287  ls
+  288  docker ps 
+  289  docker ps -a
+  290  docker volume ls 
+  291  docker volume create my-vole
+  292  docker volume ls 
+  293  docker volume rm my-vole
+  294  docker volume create my-vol
+  295  docker volume ls 
+  296  docker volume inspect my-vol
+  297  cd /var/lib/docker/
+  298  ls
+  299  cd volumes/
+  300  ls
+  301  cd my-vol/
+  302  ls
+  303  cd _data/
+  304  ls
+  305  cd 
+  306  docker volume ls 
+  307  docker images 
+  308  docker run -itd --name test-vol-1 -v my-vol:/app ubuntu:16.04
+  309  docker run -itd --name test-vol-2 -v my-vol:/app centos:8
+  310  docker ps 
+  311  docker inspect test-vol-1
+  312  docker run -itd --name test-vol-3 -v my-vol:/amitvashist7 centos:8
+  313  docker ps 
+  314  docker inspect test-vol-3
+  315  ls
+  316  docker ps 
+  317  docker attach test-vol-1
+  318  docker ps 
+  319  ls -ltr /var/lib/docker/volumes/my-vol/_data/
+  320  cat /var/lib/docker/volumes/my-vol/_data/hello.txt 
+  321  docker exec -it test-vol-2 cat /app/hello.txt
+  322  docker exec -it test-vol-3 cat /amitvashist7/hello.txt
+  323  docker attach test-vol-3
+  324  ls
+  325  cat /var/lib/docker/volumes/my-vol/_data/hello.txt 
+  326  docker run -itd --name test-vol-4 -v my-vol:/app:ro centos:8
+  327  docker attach test-vol-4
+  328  docker run -itd --name test-vol-5 -v /var/www/amit -v /var/www/vashist centos:8
+  329  docker ps 
+  330  docker attach test-vol-5
+  331  docker inspect test-vol-5
+  332  docker volume ls 
+  333  docker kill $(docker ps -qa) 
+  334  docker rm $(docker ps -qa) 
+  335  docker ps 
+  336  docker ps -a
+  337  docker volume ls 
+  338  docker run -itd --name test-vol-1 -v my-vol:/app centos:8
+  339  docker attach test-vol-1
+  340  ls
+  341  cd docker-kubernetes-ericsson-16-Nov-2021/
+  342  ls
+  343  pwd
+  344  docker run -it --name test-vol-2 -v /root/docker-kubernetes-ericsson-16-Nov-2021:/app centos:8
+  345  docker volume ls 
+  346  docker volume inspect my-vol
+  347  docker ps 
+  348  docker inspect test-vol-2
+  349  ls
+  350  cd 01-Docker/
+  351  ls
+  352  mkdir 03-Volumes
+  353  ls
+  354  history >> 03-Volumes/Day2_History.txt
